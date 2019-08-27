@@ -1,0 +1,58 @@
+<app-nav-bar></app-nav-bar>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4 game-input center">
+      <span class="badge badge-primary"><h3>Unos datuma</h3></span>
+      <form>
+        <div class="form-group">
+          <label for="birthday">Datum</label>
+          <input type="date" name="date" id="date" [(ngModel)]='date' class="form-control">
+        </div>
+        <div *ngIf="errorMessage" class="alert alert-danger" role="alert">
+          {{errorMessage}}
+        </div>
+        <div *ngIf="successMessage" class="alert alert-primary" role="alert">
+          {{successMessage}}
+        </div>
+        <button class="btn btn-outline-primary" (click)='insertGameDay()'>Unesi igru dana</button>
+        </form>
+    </div>
+
+    <div class="col-lg-4 game-input center">
+      <span class="badge badge-primary"><h3>Izaberi spojnice</h3></span>
+      <div *ngFor="let pairGame of pairGames; let i = index">
+        <div (click)="selectPairs(i)" id="pairs{{i}}" class="list-item">
+          <p>Opis: {{pairGame.description}}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4 game-input center">
+      <span class="badge badge-primary"><h3>Izaberi asocijacije</h3></span>
+      <div *ngFor="let association of associations; let i = index">
+        <div (click)="selectAssociations(i)" id="associations{{i}}" class="list-item">
+          <div class="form-group">
+            <label for="a{{i}}">A resenje</label>
+            <input type="text" disabled name="a{{i}}" id="a{{i}}" class="form-control" value="{{association.A.A_sol}}">
+          </div>
+          <div class="form-group">
+            <label for="b{{i}}">B resenje</label>
+            <input type="text" disabled name="b{{i}}" id="b{{i}}" class="form-control" value="{{association.B.B_sol}}">
+          </div>
+          <div class="form-group">
+            <label for="c{{i}}">C resenje</label>
+            <input type="text" disabled name="c{{i}}" id="c{{i}}" class="form-control" value="{{association.C.C_sol}}">
+          </div>
+          <div class="form-group">
+            <label for="d{{i}}">D resenje</label>
+            <input type="text" disabled name="d{{i}}" id="d{{i}}" class="form-control" value="{{association.D.D_sol}}">
+          </div>
+          <div class="form-group">
+            <label for="f{{i}}">Konacno resenje</label>
+            <input type="text" disabled name="f{{i}}" id="f{{i}}" class="form-control" value="{{association.final_sol}}">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

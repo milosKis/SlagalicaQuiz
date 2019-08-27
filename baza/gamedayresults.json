@@ -1,0 +1,8 @@
+{"_id":{"$oid":"5d21d62488a6960810313d13"},"date":{"$date":{"$numberLong":"1562371200000"}},"username":"mal1","points":{"$numberInt":"25"},"__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5d21d96888a6960810313d14"},"date":{"$date":{"$numberLong":"1562371200000"}},"username":"fem1","points":{"$numberInt":"50"},"__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5d2334976d68d50fb8d125d5"},"date":{"$date":{"$numberLong":"1562457600000"}},"username":"mal1","points":{"$numberInt":"30"},"__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5d2335256d68d50fb8d125d6"},"date":{"$date":{"$numberLong":"1562457600000"}},"username":"mal2","points":{"$numberInt":"41"},"__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5d23379686b2080b209320d3"},"date":{"$date":{"$numberLong":"1562457600000"}},"username":"fem1","points":{"$numberInt":"20"},"__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5d2348aaba1a100eecad8287"},"date":{"$date":{"$numberLong":"1562457600000"}},"username":"fem2","points":{"$numberInt":"50"},"__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5d23e2b1ae6dcb13d0268458"},"date":{"$date":{"$numberLong":"1562544000000"}},"username":"mal1","points":{"$numberInt":"40"},"__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5d2475c373877803a8b60e0d"},"date":{"$date":{"$numberLong":"1562544000000"}},"username":"fem2","points":{"$numberInt":"68"},"__v":{"$numberInt":"0"}}

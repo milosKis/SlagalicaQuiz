@@ -1,0 +1,76 @@
+<app-nav-bar></app-nav-bar>
+<div class="container">
+
+    <div class="row game">
+
+      <div class="col-lg-3">
+
+        <h1 class="my-4">Igre</h1>
+        <div class="list-group">
+          <h4 class="list-group-item" id="words">Slagalica</h4>
+          <h4 class="list-group-item" id="numbers">Moj broj</h4>
+          <h4 class="list-group-item" id="combinations">Skocko</h4>
+          <h4 class="list-group-item" id="pairs">Spojnice</h4>
+          <h4 class="list-group-item" id="association">Asocijacije</h4>
+        </div>
+
+      </div>
+      <!-- /.col-lg-3 -->
+
+      <div class="col-lg-9">
+
+        <div class="row" style="margin-top: 40px;">
+
+          <div class="col-lg-3 col-md-3 mb-3">
+            <div *ngIf="bluePlayer" class="card card-blue" >
+              <img class="card-img-top" src="{{bluePlayer.photo}}" alt="">
+              <div class="card-body">
+                <div class="alert alert-primary">
+                  <h5 class="card-title">
+                    {{bluePlayer.firstName}} {{bluePlayer.lastName}}
+                  </h5>
+                </div>
+                <div class="alert alert-primary">
+                  <h5>{{bluePoints}}</h5>
+                </div>
+                <span class="badge badge-primary" *ngIf="blueMessage">{{blueMessage}}</span>
+              </div>
+              
+            </div>
+          </div>
+
+          <div class="col-lg-6 col-md-6 mb-6">
+            <app-game-words *ngIf="currentGame == 'words'" [letters]="letters" [isBlue]="isBlue" (notify)="wordsGameOver($event)"></app-game-words>
+            <app-game-numbers *ngIf="currentGame == 'numbers'" [numbers]="numbers" [isBlue]="isBlue" (notify)="numbersGameOver($event)"></app-game-numbers>
+            <app-game-combinations *ngIf="currentGame == 'combinations'" [combinations]="combinations" [isBlue]="isBlue" (notify)="combinationsGameOver($event)"></app-game-combinations>
+            <app-game-pairs *ngIf="currentGame == 'pairs'" [pairGames]="pairGames" [rightColumns]="rightColumns" [isBlue]="isBlue" (notify)="pairsGameOver($event)"></app-game-pairs>
+            <div *ngIf="currentGame == 'gameover'" class="alert alert-info">Igra je zavrsena</div>
+          </div>
+
+          <div class="col-lg-3 col-md-3 mb-3">
+            <div *ngIf="redPlayer" class="card card-red">
+              <img class="card-img-top" src="{{redPlayer.photo}}" alt="">
+              <div class="card-body">
+                <div class="alert alert-danger">
+                  <h5 class="card-title">
+                    {{redPlayer.firstName}} {{redPlayer.lastName}}
+                  </h5>
+                </div>
+                <div class="alert alert-danger">
+                  <h5>{{redPoints}}</h5>
+                </div>
+                <span class="badge badge-danger" *ngIf="redMessage">{{redMessage}}</span>
+              </div>
+            </div>
+          </div>
+      
+        </div>
+        <!-- /.row -->
+
+      </div>
+      <!-- /.col-lg-9 -->
+
+    </div>
+    <!-- /.row -->
+
+  </div>

@@ -1,0 +1,135 @@
+<app-nav-bar></app-nav-bar>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4 game-input center">
+      <span class="badge badge-primary"><h3>Reci</h3></span>
+      <form>
+          <div class="form-group">
+            <label for="word">Termin</label>
+            <input type="text" [(ngModel)]='word' class="form-control" id="word" name="word">
+            <div *ngIf="wordsMessageError" class="alert alert-danger" role="alert">
+                {{wordsMessageError}}
+            </div>
+            <div *ngIf="wordsMessageSuccess" class="alert alert-primary" role="alert">
+                {{wordsMessageSuccess}}
+            </div>
+          </div>
+          <button class="btn btn-outline-primary" (click)='insertWord()'>Unesi rec</button>
+        </form>
+    </div>
+    <div class="col-lg-4 game-input center">
+      <span class="badge badge-primary"><h3>Spojnice</h3></span>
+      <form>
+          <div class="form-group">
+            <label for="pairLeft0">Opis</label>
+            <input type="text" [(ngModel)]='pairGame.description' class="form-control" id="description" name="description">
+          </div>
+          <div class="form-group">
+            <label for="pairLeft0">Par 1</label>
+            <input type="text" [(ngModel)]='pairGame.pairs[0].left' class="form-control" id="pairLeft0" name="pairLeft0">
+            <input type="text" [(ngModel)]='pairGame.pairs[0].right' class="form-control" id="pairRight0" name="pairRight0">
+          </div>
+          <div class="form-group">
+            <label for="pairLeft1">Par 2</label>
+            <input type="text" [(ngModel)]='pairGame.pairs[1].left' class="form-control" id="pairLeft1" name="pairLeft1">
+            <input type="text" [(ngModel)]='pairGame.pairs[1].right' class="form-control" id="pairRight1" name="pairRight1">
+          </div>
+          <div class="form-group">
+            <label for="pairLeft2">Par 3</label>
+            <input type="text" [(ngModel)]='pairGame.pairs[2].left' class="form-control" id="pairLeft2" name="pairLeft2">
+            <input type="text" [(ngModel)]='pairGame.pairs[2].right' class="form-control" id="pairRight2" name="pairRight2">
+          </div>
+          <div class="form-group">
+            <label for="pairLeft3">Par 4</label>
+            <input type="text" [(ngModel)]='pairGame.pairs[3].left' class="form-control" id="pairLeft3" name="pairLeft3">
+            <input type="text" [(ngModel)]='pairGame.pairs[3].right' class="form-control" id="pairRight3" name="pairRight3">
+          </div>
+          <div class="form-group">
+            <label for="pairLeft4">Par 5</label>
+            <input type="text" [(ngModel)]='pairGame.pairs[4].left' class="form-control" id="pairLeft4" name="pairLeft4">
+            <input type="text" [(ngModel)]='pairGame.pairs[4].right' class="form-control" id="pairRight4" name="pairRight4">
+          </div>
+          <div class="form-group">
+            <label for="pairLeft5">Par 6</label>
+            <input type="text" [(ngModel)]='pairGame.pairs[5].left' class="form-control" id="pairLeft5" name="pairLeft5">
+            <input type="text" [(ngModel)]='pairGame.pairs[5].right' class="form-control" id="pairRight5" name="pairRight5">
+          </div>
+          <div class="form-group">
+            <label for="pairLeft6">Par 7</label>
+            <input type="text" [(ngModel)]='pairGame.pairs[6].left' class="form-control" id="pairLeft6" name="pairLeft6">
+            <input type="text" [(ngModel)]='pairGame.pairs[6].right' class="form-control" id="pairRight6" name="pairRight6">
+          </div>
+          <div class="form-group">
+            <label for="pairLeft7">Par 8</label>
+            <input type="text" [(ngModel)]='pairGame.pairs[7].left' class="form-control" id="pairLeft7" name="pairLeft7">
+            <input type="text" [(ngModel)]='pairGame.pairs[7].right' class="form-control" id="pairRight7" name="pairRight7">
+          </div>
+          <div class="form-group">
+            <label for="pairLeft8">Par 9</label>
+            <input type="text" [(ngModel)]='pairGame.pairs[8].left' class="form-control" id="pairLeft8" name="pairLeft8">
+            <input type="text" [(ngModel)]='pairGame.pairs[8].right' class="form-control" id="pairRight8" name="pairRight8">
+          </div>
+          <div class="form-group">
+            <label for="pairLeft9">Par 10</label>
+            <input type="text" [(ngModel)]='pairGame.pairs[9].left' class="form-control" id="pairLeft9" name="pairLeft9">
+            <input type="text" [(ngModel)]='pairGame.pairs[9].right' class="form-control" id="pairRight9" name="pairRight9">
+          </div>
+          <div *ngIf="pairsMessageError" class="alert alert-danger" role="alert">
+              {{pairsMessageError}}
+          </div>
+          <div *ngIf="pairsMessageSuccess" class="alert alert-primary" role="alert">
+              {{pairsMessageSuccess}}
+          </div> 
+          <button class="btn btn-outline-primary" (click)='insertPairs()'>Unesi parove</button>
+        </form>
+    </div>
+    <div class="col-lg-4 game-input center">
+      <span class="badge badge-primary"><h3>Asocijacije</h3></span>
+      <form>
+          <div class="form-group">
+            <label for="a1">Grupa A</label>
+            <input type="text" [(ngModel)]='association.A.A1' class="form-control" id="a1" name="a1" placeholder="A1">
+            <input type="text" [(ngModel)]='association.A.A2' class="form-control" id="a2" name="a2" placeholder="A2">
+            <input type="text" [(ngModel)]='association.A.A3' class="form-control" id="a3" name="a3" placeholder="A3">
+            <input type="text" [(ngModel)]='association.A.A4' class="form-control" id="a4" name="a4" placeholder="A4">
+            <input type="text" [(ngModel)]='association.A.A_sol' class="form-control" id="a_sol" name="a_sol" placeholder="A resenje"> 
+          </div>
+          <div class="form-group">
+            <label for="b1">Grupa B</label>
+            <input type="text" [(ngModel)]='association.B.B1' class="form-control" id="b1" name="b1" placeholder="B1">
+            <input type="text" [(ngModel)]='association.B.B2' class="form-control" id="b2" name="b2" placeholder="B2">
+            <input type="text" [(ngModel)]='association.B.B3' class="form-control" id="b3" name="b3" placeholder="B3">
+            <input type="text" [(ngModel)]='association.B.B4' class="form-control" id="b4" name="b4" placeholder="B4">
+            <input type="text" [(ngModel)]='association.B.B_sol' class="form-control" id="b_sol" name="b_sol" placeholder="B resenje"> 
+          </div> 
+          <div class="form-group">
+            <label for="c1">Grupa C</label>
+            <input type="text" [(ngModel)]='association.C.C1' class="form-control" id="c1" name="c1" placeholder="C1">
+            <input type="text" [(ngModel)]='association.C.C2' class="form-control" id="c2" name="c2" placeholder="C2">
+            <input type="text" [(ngModel)]='association.C.C3' class="form-control" id="c3" name="c3" placeholder="C3">
+            <input type="text" [(ngModel)]='association.C.C4' class="form-control" id="c4" name="c4" placeholder="C4">
+            <input type="text" [(ngModel)]='association.C.C_sol' class="form-control" id="c_sol" name="c_sol" placeholder="C resenje"> 
+          </div>
+          <div class="form-group">
+            <label for="d1">Grupa D</label>
+            <input type="text" [(ngModel)]='association.D.D1' class="form-control" id="d1" name="d1" placeholder="D1">
+            <input type="text" [(ngModel)]='association.D.D2' class="form-control" id="d2" name="d2" placeholder="D2">
+            <input type="text" [(ngModel)]='association.D.D3' class="form-control" id="d3" name="d3" placeholder="D3">
+            <input type="text" [(ngModel)]='association.D.D4' class="form-control" id="d4" name="d4" placeholder="D4">
+            <input type="text" [(ngModel)]='association.D.D_sol' class="form-control" id="d_sol" name="d_sol" placeholder="D resenje"> 
+          </div>
+          <div class="form-group">
+            <label for="f">Konacno resenje</label>
+            <input type="text" [(ngModel)]='association.final_sol' class="form-control" id="f1" name="f1" placeholder="resenje">
+          </div>
+          <div *ngIf="associationsMessageError" class="alert alert-danger" role="alert">
+              {{associationsMessageError}}
+          </div>
+          <div *ngIf="associationsMessageSuccess" class="alert alert-primary" role="alert">
+              {{associationsMessageSuccess}}
+          </div> 
+          <button class="btn btn-outline-primary" (click)='insertAssociations()'>Unesi asocijacije</button>
+      </form>
+    </div>
+  </div>
+</div>

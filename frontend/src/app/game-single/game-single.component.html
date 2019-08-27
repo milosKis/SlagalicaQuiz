@@ -1,0 +1,65 @@
+<app-nav-bar></app-nav-bar>
+<div class="container">
+
+    <div class="row game">
+
+      <div class="col-lg-3">
+
+        <h1 class="my-4">Igre</h1>
+        <div class="list-group">
+          <h4 class="list-group-item selected" id="words">Slagalica</h4>
+          <h4 class="list-group-item" id="numbers">Moj broj</h4>
+          <h4 class="list-group-item" id="combinations">Skocko</h4>
+          <h4 class="list-group-item" id="pairs">Spojnice</h4>
+          <h4 class="list-group-item" id="association">Asocijacije</h4>
+        </div>
+
+      </div>
+      <!-- /.col-lg-3 -->
+
+      <div class="col-lg-9">
+
+        <div class="row" style="margin-top: 40px;">
+
+          <div class="col-lg-3 col-md-3 mb-3">
+            <div *ngIf="player" class="card card-blue" >
+              <img class="card-img-top" src="{{player.photo}}" alt="">
+              <div class="card-body">
+                <div class="alert alert-primary">
+                  <h5 class="card-title">
+                    {{player.firstName}} {{player.lastName}}
+                  </h5>
+                </div>
+                <div class="alert alert-primary">
+                  <h5>{{points}}</h5>
+                </div>
+                <span class="badge badge-primary" *ngIf="message">{{message}}</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-8 col-md-8 mb-8">
+            <app-game-words *ngIf="currentGame == 'words'" [letters]="letters" [isBlue]="isBlue" (notify)="wordsGameOver($event)"></app-game-words>
+            <app-game-numbers *ngIf="currentGame == 'numbers'" [numbers]="numbers" [isBlue]="isBlue" (notify)="numbersGameOver($event)"></app-game-numbers>
+            <app-game-combinations-single *ngIf="currentGame == 'combinations'" [combinations]="combinations" (notify)="combinationsGameOver($event)"></app-game-combinations-single>
+            <app-game-pairs-single *ngIf="currentGame == 'pairs' && gameOfTheDay" [pairGame]="gameOfTheDay.pairGame" (notify)="pairsGameOver($event)"></app-game-pairs-single>
+            <app-game-associations-single *ngIf="currentGame == 'associations' && gameOfTheDay" [association]="gameOfTheDay.association" (notify)="associationsGameOver($event)"></app-game-associations-single>
+            <div *ngIf="currentGame == 'notsetted'" class="alert alert-danger">Nije podesena igra dana za danas</div>
+            <div *ngIf="currentGame == 'alreadyplayed'" class="alert alert-danger">Vec ste odigrali igru dana</div>
+            <div *ngIf="currentGame == 'gameover'" class="alert alert-primary">Igra je zavrsena</div>
+          </div>
+
+          <div class="col-lg-1 col-md-1 mb-1">
+            
+          </div>
+      
+        </div>
+        <!-- /.row -->
+
+      </div>
+      <!-- /.col-lg-9 -->
+
+    </div>
+    <!-- /.row -->
+
+  </div>

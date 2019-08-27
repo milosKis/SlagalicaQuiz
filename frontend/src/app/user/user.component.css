@@ -1,0 +1,28 @@
+.user {
+    padding-top: 3vh;
+    padding-bottom: 5vh;
+    margin-right: 5vh;
+}
+
+.row {
+    margin-top: 5vh;
+    margin-bottom: 5vh
+}
+
+span {
+    margin-bottom: 3vh;
+}
+
+.birthday {
+    margin-top: 2vh;
+}
+
+.alert {
+    margin-top: 1vh;
+}
+
+img {
+    width: 50vh;
+    height: 50vh;
+    margin: 1vh;
+}

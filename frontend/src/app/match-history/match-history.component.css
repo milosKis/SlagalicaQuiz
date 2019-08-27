@@ -1,0 +1,31 @@
+.container {
+    height: 120vh;
+}
+
+.row {
+    margin-right: 2vh;
+}
+
+.rankings {
+    padding-top: 3vh;
+    padding-bottom: 5vh;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+}
+
+img {
+    width: 10vh;
+    height: 10vh;
+    margin-left: 2vh;
+    margin-right: 2vh;
+}
+
+.list-item {
+    padding: 1vh;
+    margin: 2vh;
+    text-align: center;
+}
+
+.bordered {
+    border: 2px solid rgb(61, 117, 221);
+}

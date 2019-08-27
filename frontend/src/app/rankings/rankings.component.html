@@ -1,0 +1,47 @@
+<app-nav-bar></app-nav-bar>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4 rankings center" *ngIf="currentUser">
+      <span class="badge badge-primary"><h3>Igra dana</h3></span>
+      <div class="row">
+        <div class="col-lg-12" *ngFor="let gameDayResult of gameDayResults; let i = index">
+          <div class="list-item" *ngIf="gameDayPlayers && gameDayPlayers[i]" [class.bordered]="currentUser.username == gameDayResult.username">
+            <div class="badge badge-primary">{{i + 1}}.</div>
+            <img src="{{gameDayPlayers[i].photo}}">
+                {{gameDayPlayers[i].firstName}} {{gameDayPlayers[i].lastName}}
+            <div class="badge badge-primary">{{gameDayResult.points}}</div>
+          </div>
+        </div>
+        <h4 *ngIf="!gameDayResults || gameDayResults.length == 0">Niko jos nije odigrao igru</h4>
+      </div>
+    </div>
+
+    <div class="col-lg-4 rankings center">
+        <span class="badge badge-primary"><h3>Mecevi (7 dana)</h3></span>
+        <div class="row">
+          <div class="col-lg-12" *ngFor="let player of sevenDaysPlayers; let i = index">
+            <div class="list-item" [class.bordered]="currentUser && currentUser.username == player.username">
+              <div class="badge badge-primary">{{i + 1}}.</div>
+                  {{player.username}}
+              <div class="badge badge-primary">{{player.points}}</div>
+            </div>
+          </div>
+          <h4 *ngIf="!sevenDaysPlayers || sevenDaysPlayers.length == 0">Niko jos nije odigrao mec</h4>
+        </div>
+      </div>
+
+      <div class="col-lg-4 rankings center">
+          <span class="badge badge-primary"><h3>Mecevi (svi)</h3></span>
+          <div class="row">
+            <div class="col-lg-12" *ngFor="let player of allTimePlayers; let i = index">
+              <div class="list-item" [class.bordered]="currentUser && currentUser.username == player.username">
+                <div class="badge badge-primary">{{i + 1}}.</div>
+                    {{player.username}}
+                <div class="badge badge-primary">{{player.points}}</div>
+              </div>
+            </div>
+            <h4 *ngIf="!allTimePlayers || allTimePlayers.length == 0">Niko jos nije odigrao mec</h4>
+          </div>
+        </div>
+  </div>
+</div>

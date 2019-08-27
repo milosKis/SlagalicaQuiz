@@ -1,0 +1,12 @@
+//frontend pokretanje  -  Chrome pretrazivac
+
+ng serve --open 
+
+//backend pokretanje
+
+install (dovoljno je samo jednom pri prvom pokretanju)
+mongod
+tsc
+npm run serve
+
+** Pre svega ovoga napraviti bazu, pogledati sadrzaj foldera 'baza'

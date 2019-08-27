@@ -1,0 +1,87 @@
+<app-nav-bar></app-nav-bar>
+<div class="container">
+<div class="row">
+    <div class="col-lg-4 border border-primary rounded-lg registration">
+        <span class="badge badge-primary"><h3>Registracija</h3></span>
+      <form>
+        <div class="form-group">
+          <label for="firstName">Ime:</label>
+          <input type="text" [(ngModel)]='firstName' class="form-control" id="firstName" name="firstName">
+          <div *ngIf="firstNameMessage" class="alert alert-danger" role="alert">
+              {{firstNameMessage}}
+          </div>
+        </div>
+        <div class="form-group">
+            <label for="lastName">Prezime:</label>
+            <input type="text" [(ngModel)]='lastName' class="form-control" id="lastName" name="lastName">
+            <div *ngIf="lastNameMessage" class="alert alert-danger" role="alert">
+                {{lastNameMessage}}
+            </div>
+          </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" [(ngModel)]='email' class="form-control" id="email" name="email">
+            <div *ngIf="emailMessage" class="alert alert-danger" role="alert">
+                {{emailMessage}}
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="job">Zanimanje:</label>
+            <input type="text" [(ngModel)]='job' class="form-control" id="job" name="job">
+            <div *ngIf="jobMessage" class="alert alert-danger" role="alert">
+                {{jobMessage}}
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="username">Korisnicko ime:</label>
+            <input type="text" [(ngModel)]='username' class="form-control" id="username" name="username">
+            <div *ngIf="usernameMessage" class="alert alert-danger" role="alert">
+                {{usernameMessage}}
+            </div>
+        </div>
+        <div class="form-group">
+          <label for="pwd">Lozinka:</label>
+          <input type="password" [(ngModel)]='password' class="form-control" id="pwd" name="pwd">
+          <div *ngIf="passwordMessage" class="alert alert-danger" role="alert">
+              {{passwordMessage}}
+          </div>
+        </div>
+        <div class="form-group">
+            <label for="pwdConfirm">Potvrda lozinke:</label>
+            <input type="password" [(ngModel)]='passwordConfirm' class="form-control" id="pwdConfirm" name="pwdConfirm">
+            <div *ngIf="passwordConfirmMessage" class="alert alert-danger" role="alert">
+                {{passwordConfirmMessage}}
+            </div>
+        </div>
+        <label for="gender">Pol</label>
+        <div class="form-check" id="gender">
+          <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="gender" [(ngModel)]='gender' ng-checked="gender === 'male'" value="male">Muski
+          </label>
+        </div>
+        <div class="form-check">
+          <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="gender" [(ngModel)]='gender' ng-checked="gender === 'female'" value="female">Zenski
+          </label>
+        </div>
+        <div class="form-group birthday">
+          <label for="birthday">Datum rodjenja:</label>
+          <input type="date" name="birthday" id="birthday" [(ngModel)]='birthday' class="form-control">
+          <div *ngIf="birthdayMessage" class="alert alert-danger" role="alert">
+              {{birthdayMessage}}
+          </div>
+        </div>  
+        <div class="form-group">
+          <label for="photo">Profilna fotografija:</label><br/>
+          <input style="display: none" type="file" (change)="onFileChanged($event)" class="form-control" #fileInput>
+          <button class="btn btn-primary" (click)="fileInput.click()">Izaberi</button>
+          <img *ngIf="imgSrc" src="{{imgSrc}}">
+          <div *ngIf="fileMessage" class="alert alert-danger" role="alert">
+              {{fileMessage}}
+          </div>
+        </div>
+        <button class="btn btn-outline-primary" (click)='register()'>Registruj se</button>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+.game-input {
+    padding-top: 3vh;
+    padding-bottom: 5vh;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    text-align: center;
+}
+
+.alert {
+    margin-top: 1vh;
+}
+
+.center {
+    margin-left: auto;
+}
+
+input {
+    margin-bottom: 1vh;
+}
+
+.list-item {
+    padding: 1vh;
+    margin: 2vh;
+    text-align: center;
+    cursor: pointer;
+    border: 2px solid rgb(61, 117, 221);
+}
+
+.selected {
+    background-color: rgb(61, 117, 221);
+}

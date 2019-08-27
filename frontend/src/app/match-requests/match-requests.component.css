@@ -1,0 +1,31 @@
+.requests {
+    padding-top: 3vh;
+    padding-bottom: 5vh;
+}
+
+.row {
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+}
+
+span {
+    margin-bottom: 3vh;
+}
+
+h4 {
+    text-align: center;
+}
+.buttons {
+    margin-top: 5vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.btn-accept {
+    margin-right: 5vh;
+}
+
+.container {
+    height: 140vh;
+}

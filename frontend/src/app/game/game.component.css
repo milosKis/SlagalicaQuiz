@@ -1,0 +1,29 @@
+.card-red {
+    border: 1px solid #ff3333;
+}
+
+img {
+    margin-top: 1vh;
+}
+
+.card-blue {
+    border: 1px solid #4d79ff;
+}
+
+.game {
+    height: 130vh;
+}
+
+.card-body {
+    text-align: center;
+}
+
+.active-red {
+    background: #ff3333;
+    border: 1px solid #ff3333;
+}
+
+.active-blue {
+    background: #4d79ff;
+    border: 1px solid #4d79ff;
+}

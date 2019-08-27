@@ -1,0 +1,18 @@
+<app-nav-bar></app-nav-bar>
+<div class="container">
+  <div class="row">
+      <div class="col-lg-4 rankings" *ngIf="currentPlayer && currentPlayer.type == 'player'">
+          <span class="badge badge-primary" style="text-align: center;"><h3>Skorasnji mecevi:</h3></span>
+          <div class="row">
+            <div class="col-lg-12" *ngFor="let match of matches">
+              <div class="list-item border border-primary rounded-lg">
+                <div class="badge badge-primary">{{match.playerBlue}}</div>
+                {{match.pointsBlue}} : {{match.pointsRed}}
+                <div class="badge badge-danger">{{match.playerRed}}</div>
+              </div>
+            </div>
+            <h4 *ngIf="!matches || matches.length == 0">Niste odigrali jos ni jedan mec</h4>
+          </div>
+        </div>
+  </div>
+</div>

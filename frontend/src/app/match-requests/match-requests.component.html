@@ -1,0 +1,32 @@
+<app-nav-bar></app-nav-bar>
+<div class="container">
+  <div class="row">
+      <div class="col-lg-6 border border-primary rounded-lg requests">
+        <span class="badge badge-primary"><h3>Kreiraj zahtev za mec kao plavi takmicar:</h3></span>
+        <button *ngIf="waitingForRedPlayer == false" class="btn btn-primary" (click)="createMatchRequest()">Kreiraj</button>
+        <h3 *ngIf="waitingForRedPlayer == true">Sacekaj da neki igrac prihvati zahtev</h3>
+      </div>
+  </div>
+  <div class="row" *ngIf="waitingForRedPlayer == false">
+    <div class="col-lg-6 border border-danger rounded-lg requests" >
+        <span class="badge badge-danger"><h3>Prikljuci se kao crveni takmicar:</h3></span>
+        <h3 *ngIf="bluePlayers.length == 0" class="no-result">Nema zahteva za mec</h3>
+    </div>
+  </div>
+  <div class="row" *ngIf="waitingForRedPlayer == false">
+          <div class="col-lg-3 requests" *ngFor="let bluePlayer of bluePlayers">
+              <div class="card">
+                  <img class="card-img-top" src="{{bluePlayer.photo}}" alt="">
+                  <div class="card-body">
+                    <h4 class="card-title">
+                      {{bluePlayer.firstName}} {{bluePlayer.lastName}}
+                    </h4>
+                    <div class="buttons">
+                        <button class="btn btn-danger btn-accept" (click)="acceptMatchRequest(bluePlayer)">Igraj</button>
+                    </div>
+                  </div>  
+              </div>
+  
+          </div>
+  </div>
+  </div>

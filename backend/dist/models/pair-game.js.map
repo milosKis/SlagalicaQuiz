@@ -1,0 +1,1 @@
+{"version":3,"file":"pair-game.js","sourceRoot":"","sources":["../../src/models/pair-game.ts"],"names":[],"mappings":";;;;;AAAA,wDAAgC;AAGhC,MAAM,MAAM,GAAG,kBAAQ,CAAC,MAAM,CAAC;AAE/B,IAAI,QAAQ,GAAG,IAAI,MAAM,CAAC;IACtB,WAAW,EAAG;QACV,IAAI,EAAE,MAAM;KACf;IACD,KAAK,EAAG;QACJ,IAAI,EAAE,KAAK;KACd;CACJ,CAAC,CAAC;AAEH,kBAAe,kBAAQ,CAAC,KAAK,CAAC,UAAU,EAAE,QAAQ,CAAC,CAAC"}
