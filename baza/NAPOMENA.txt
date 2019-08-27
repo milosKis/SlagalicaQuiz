@@ -1,4 +1,0 @@
-Da bi projekat mogao da radi normalno, neophodno je da se napravi i napuni baza.
-Potrebno je kreirati bazu 'slagalica' i u okviru nje napraviti kolekcije koje
-nose ista imena kao i prilozeni .json fajlovi. Nakon kreiranja kolekcija, popuniti kolekcije
-sadrzajem iz odgovarajucih fajlova.

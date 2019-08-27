@@ -1,0 +1,3 @@
+Before running the project, you should create and import data to database.
+You should create database 'slagalica' and inside database create collections that are named by .json files in this folder. 
+After creating collections, you should import data into collections by importing .json files.

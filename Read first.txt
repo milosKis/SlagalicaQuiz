@@ -1,0 +1,12 @@
+//frontend pokretanje  -  Chrome browser
+
+ng serve --open 
+
+//backend pokretanje
+
+install (it's enough only once, when starting)
+mongod
+tsc
+npm run serve
+
+** Before all of this create database, search the content of the folder 'database'
