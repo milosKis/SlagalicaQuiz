@@ -23,7 +23,7 @@
     "@types/mongoose": "^5.3.5",
     "cors": "^2.8.5",
     "express": "^4.17.1",
-    "mongoose": "^5.4.0",
+    "mongoose": "^5.7.5",
     "socket.io": "^2.2.0"
   }
 }
